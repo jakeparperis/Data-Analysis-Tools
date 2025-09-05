@@ -73,7 +73,7 @@ df = pd.DataFrame(data)
 
 # Scatter plot initialisation
 plt.figure(figsize=(12, 7))
-plt.scatter(df["PrgP"], df["PrgC"], s=50, alpha=0.9, color="red")
+plt.scatter(df["PrgP"], df["PrgC"], s=50, alpha=0.9, color="darkblue")
 
 # Extend axes past dataset limit
 plt.xlim(0, df["PrgP"].max() + 1)
