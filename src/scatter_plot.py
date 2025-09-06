@@ -45,10 +45,10 @@ best_prgp = df.nlargest(1, "PrgP")
 best_prgc= df.nlargest(1, "PrgC")
 p50_pass = df["PrgP"].median()
 p50_carry = df["PrgC"].median()
-eligible = df[(df["PrgP"] >= p50_pass) & (df["PrgC"] >= p50_carry)]
-top_combined = eligible.assign(score = eligible["PrgP"] + eligible["PrgC"]).nlargest(8, "score")
+best_above_p50 = df[(df["PrgP"] >= p50_pass) & (df["PrgC"] >= p50_carry)]
+best_combined = eligible.assign(score = best_above_p50["PrgP"] + best_above_p50["PrgC"]).nlargest(8, "score")
 
-labelled = pd.concat([best_prgc, best_prgp, top_combined]).drop_duplicates()
+labelled = pd.concat([best_prgc, best_prgp, best_combined]).drop_duplicates()
 
 for i, row in labelled.iterrows():
     plt.text(row["PrgP"]+0.1, row["PrgC"], row["Player"],
