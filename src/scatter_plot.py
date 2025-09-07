@@ -60,7 +60,7 @@ for i, row in labelled.iterrows():
 # Label customisation
 plt.xlabel("Progressive Passes (per 90)", fontsize=12, fontweight="bold", labelpad=15)
 plt.ylabel("Progressive Carries (per 90)", fontsize=12, fontweight="bold", labelpad=15)
-plt.suptitle("Minimum 1000 minutes played - No relegated players - Past 365 days", fontsize=10, x=0.3285, y=0.975)
+plt.suptitle("Minimum 1000 minutes played - No relegated players - Last 365 days", fontsize=10, x=0.3285, y=0.975)
 plt.title("2024/25 Premier League Fullback Ball Progression", fontsize=18, fontweight="bold", pad=55, loc='left')
 
 graphics_folder = "../graphics_created"
